@@ -53,7 +53,7 @@
 
 	var TabDrop = function(element, options) {
 		this.element = $(element);
-		this.dropdown = $('<li class="dropdown hide float-right tabdrop order-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">'+options.text+' <b class="caret"></b></a><ul class="dropdown-menu"></ul></li>')
+		this.dropdown = $('<li class="dropdown d-none float-right tabdrop order-1"><a class="dropdown-toggle" data-toggle="dropdown" href="#">'+options.text+' <b class="caret"></b></a><ul class="dropdown-menu"></ul></li>')
 							.prependTo(this.element);
 		if (this.element.parent().is('.tabs-below')) {
 			this.dropdown.addClass('dropup');
@@ -67,7 +67,7 @@
 
 		layout: function() {
 			var collection = [];
-			this.dropdown.removeClass('hide');
+			this.dropdown.removeClass('d-none');
 			this.element
 				.append(this.dropdown.find('li'))
 				.find('>li')
@@ -89,7 +89,7 @@
 					this.dropdown.removeClass('active');
 				}
 			} else {
-				this.dropdown.addClass('hide');
+				this.dropdown.addClass('d-none');
 			}
 		}
 	}
